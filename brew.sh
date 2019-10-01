@@ -19,7 +19,7 @@ brew upgrade --all
 # running `chsh`.
 brew install bash
 brew tap homebrew/versions
-brew install bash-completion2
+brew install bash-completion@2
 
 # Install tools
 brew install htop
