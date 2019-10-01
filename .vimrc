@@ -668,4 +668,5 @@ colorscheme shades_of_purple
 let g:shades_of_purple_airline = 1
 let g:airline_theme='shades_of_purple'
 
-
+let g:netrw_liststyle = 3
+let g:netrw_banner = 0
