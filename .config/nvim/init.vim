@@ -62,12 +62,20 @@ Plug 'icymind/NeoSolarized'
 Plug 'freeo/vim-kalisi'
 Plug 'ayu-theme/ayu-vim'
 
+Plug 'Rigellute/shades-of-purple.vim'
+
+" If you have vim >=8.0 or Neovim >= 0.1.5
+if (has("termguicolors"))
+ set termguicolors
+endif
+
+"""" enable the theme
 call plug#end()
 
 
 " Clipboard
 let g:clipboard = {
-      \   'name': 'lundberg',
+      \   'name': 'alex',
       \   'copy': {
       \      '+': 'tmux load-buffer -',
       \      '*': 'tmux load-buffer -',
@@ -90,6 +98,11 @@ let g:clipboard = {
 "let g:airline_theme='papercolor'
 "let g:airline_theme='kalisi'
 "let g:airline_theme='solarized'
+
+syntax enable
+colorscheme shades_of_purple
+let g:shades_of_purple_airline = 1
+let g:airline_theme='shades_of_purple'
 
 
 " Load global vim config

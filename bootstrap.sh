@@ -18,7 +18,7 @@ function install() {
   fi;
 
   # Install node and dependencies
-  curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
+  brew install nvm
   cd ~/.config/nvim/
   nvm install node
   npm install
