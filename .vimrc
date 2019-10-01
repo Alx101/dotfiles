@@ -33,6 +33,12 @@ set t_ut=                      " Tmux (empty background color)
 "set background=dark
 "colorscheme desert
 
+syntax enable
+colorscheme shades_of_purple
+let g:shades_of_purple_airline = 1
+let g:airline_theme='shades_of_purple'
+
+
 function! g:InitColorScheme()
     if !exists('g:COLOR')
         let g:COLOR='dark' | echo 'Setting default colors'
@@ -49,10 +55,10 @@ endfunction
 
 function! g:SetColorScheme()
     " Theme specific settings
-    exe 'let g:ayucolor="' . (exists('g:' . toupper(g:COLOR) . '_AYU') ? eval('g:' . toupper(g:COLOR) . '_AYU') : g:COLOR) . '"'
+    "exe 'let g:ayucolor="' . (exists('g:' . toupper(g:COLOR) . '_AYU') ? eval('g:' . toupper(g:COLOR) . '_AYU') : g:COLOR) . '"'
 
-    exe "set background=" . g:COLOR
-    exe "colorscheme " . (g:COLOR == 'dark' ? g:DARK : g:LIGHT)
+    "exe "set background=" . g:COLOR
+    "exe "colorscheme " . (g:COLOR == 'dark' ? g:DARK : g:LIGHT)
 
     " Hide some UI stuff, like ~ beneath buffer
     set fillchars=
@@ -64,11 +70,11 @@ function! g:SetColorScheme()
     endif
 
     " Reload airline theme now when "remembered" g:COLOR is available
-    if exists('g:' . toupper(g:COLOR) . '_AIRLINE')
-        exe "AirlineTheme " . eval('g:' . toupper(g:COLOR) . '_AIRLINE')
-    else
-        call airline#switch_matching_theme()
-    endif
+    "if exists('g:' . toupper(g:COLOR) . '_AIRLINE')
+    "    exe "AirlineTheme " . eval('g:' . toupper(g:COLOR) . '_AIRLINE')
+    "else
+    "    call airline#switch_matching_theme()
+    "endif
 endfunction
 
 function! g:ToggleColorScheme()
@@ -655,3 +661,11 @@ let g:indentLine_setColors = 0
 
 " auto-pairs
 let g:AutoPairsMapCh = 0
+
+
+syntax enable
+colorscheme shades_of_purple
+let g:shades_of_purple_airline = 1
+let g:airline_theme='shades_of_purple'
+
+
