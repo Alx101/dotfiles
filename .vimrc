@@ -65,9 +65,9 @@ function! g:SetColorScheme()
     highlight EndOfBuffer guifg=bg
 
     " Refresh dev icons in nerdtree
-    if exists('g:NERDTree')
-        call webdevicons#softRefresh()
-    endif
+    "if exists('g:NERDTree')
+    "    call webdevicons#softRefresh()
+    "endif
 
     " Reload airline theme now when "remembered" g:COLOR is available
     "if exists('g:' . toupper(g:COLOR) . '_AIRLINE')
@@ -451,24 +451,24 @@ endfunction
 
 " NERDTree
 " --------
-let g:NERDCustomDelimiters = { 'cA': { 'right': '  # ' } }
-let NERDTreeIgnore = ['\.pyc$']
+"let g:NERDCustomDelimiters = { 'cA': { 'right': '  # ' } }
+"let NERDTreeIgnore = ['\.pyc$']
 " ALT-n
-nmap <silent> <C-n> :NERDTreeToggle<CR>
-nmap <silent> <leader><lt> :NERDTreeFind<CR>
+"nmap <silent> <C-n> :NERDTreeToggle<CR>
+"nmap <silent> <leader><lt> :NERDTreeFind<CR>
 
 function! IsNerdTreeOpen()
-    return exists('t:NERDTreeBufName') && bufwinnr(t:NERDTreeBufName) != -1
+    "return exists('t:NERDTreeBufName') && bufwinnr(t:NERDTreeBufName) != -1
 endfunction
 
 
 " Devicons
 " --------
-let g:webdevicons_enable = 1
-let g:webdevicons_enable_nerdtree = 1
-let g:webdevicons_conceal_nerdtree_brackets = 1
-let g:WebDevIconsUnicodeGlyphDoubleWidth = 1
-let g:WebDevIconsNerdTreeAfterGlyphPadding = ' '
+"let g:webdevicons_enable = 1
+"let g:webdevicons_enable_nerdtree = 1
+"let g:webdevicons_conceal_nerdtree_brackets = 1
+"let g:WebDevIconsUnicodeGlyphDoubleWidth = 1
+"let g:WebDevIconsNerdTreeAfterGlyphPadding = ' '
 "let g:WebDevIconsUnicodeDecorateFolderNodes = 1
 "let g:DevIconsEnableFoldersOpenClose = 1
 
@@ -477,16 +477,16 @@ let g:WebDevIconsNerdTreeAfterGlyphPadding = ' '
 " -------
 "let g:airline#extensions#disable_rtp_load = 1
 let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#show_buffers = 1
-let g:airline#extensions#tabline#show_tabs = 1
-let g:airline#extensions#tabline#show_tab_type = 0
+"let g:airline#extensions#tabline#show_buffers = 1
+"let g:airline#extensions#tabline#show_tabs = 1
+"let g:airline#extensions#tabline#show_tab_type = 0
 let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
-let g:airline#extensions#branch#enabled = 1
-let g:airline#extensions#hunks#enabled = 0
-let g:airline#extensions#wordcount#enabled = 0
-let g:airline#extensions#ycm#enabled = 0
-let g:airline#parts#ffenc#skip_expected_string = 'utf-8[unix]'
-let g:airline_powerline_fonts = 1
+"let g:airline#extensions#branch#enabled = 1
+"let g:airline#extensions#hunks#enabled = 0
+"let g:airline#extensions#wordcount#enabled = 0
+"let g:airline#extensions#ycm#enabled = 0
+"let g:airline#parts#ffenc#skip_expected_string = 'utf-8[unix]'
+"let g:airline_powerline_fonts = 1
 "let g:Powerline_symbols = 'unicode'
 "let g:airline_symbols = {}
 "let g:airline_symbols.space = "\ua0"
@@ -591,15 +591,15 @@ endif
 " -----
 "highlight clear ALEErrorSign
 "highlight clear ALEWarningSign
-let g:airline#extensions#ale#enabled = 1
-let g:ale_sign_error = '✖'
-let g:ale_sign_warning = '⚠'  " ⚡
-let g:ale_sign_column_always = 1
+"let g:airline#extensions#ale#enabled = 1
+"let g:ale_sign_error = '✖'
+"let g:ale_sign_warning = '⚠'  " ⚡
+"let g:ale_sign_column_always = 1
 
-let g:ale_completion_enabled = 0
-let g:ale_completion_delay = 10
-let g:ale_completion_max_suggestions = 10
-let g:ale_completion_excluded_words = ['from', 'import']
+"let g:ale_completion_enabled = 0
+"let g:ale_completion_delay = 10
+"let g:ale_completion_max_suggestions = 10
+"let g:ale_completion_excluded_words = ['from', 'import']
 
 let g:ale_linters = {
 \   'python': ['flake8'],

@@ -10,7 +10,7 @@ call plug#begin('~/.local/share/nvim/plugged')
 
 Plug 'w0rp/ale'
 Plug 'scrooloose/nerdcommenter'
-Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+"Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'jiangmiao/auto-pairs'
 Plug 'vim-scripts/BufOnly.vim'
 Plug 'terryma/vim-multiple-cursors'
@@ -57,8 +57,8 @@ Plug 'mxw/vim-jsx'
 Plug 'rakr/vim-one'
 Plug 'KeitaNakamura/neodark.vim'
 Plug 'NLKNguyen/papercolor-theme'
-Plug 'ryanoasis/vim-devicons'
-Plug 'icymind/NeoSolarized'
+"Plug 'ryanoasis/vim-devicons'
+"Plug 'icymind/NeoSolarized'
 Plug 'freeo/vim-kalisi'
 Plug 'ayu-theme/ayu-vim'
 
