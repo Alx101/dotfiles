@@ -30,7 +30,8 @@ Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'junegunn/gv.vim'  " Git log
 
-Plug 'Valloric/YouCompleteMe', {'for': []}
+"Plug 'Valloric/YouCompleteMe', {'for': []}
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 Plug 'davidhalter/jedi-vim', {'for': 'python'}
 "Plug 'autozimu/LanguageClient-neovim', {'branch': 'next', 'do': 'bash install.sh'}
 

@@ -27,7 +27,8 @@ brew install git
 brew install libjpeg
 brew install the_silver_searcher  # ag
 brew install ctags
-brew install neovim/neovim/neovim
+brew install cmake
+brew install neovim/neovim/eeovim
 
 # Install Python 2+3
 brew install python@2
