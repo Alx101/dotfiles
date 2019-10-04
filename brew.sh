@@ -18,6 +18,7 @@ brew upgrade --all
 # Note: don’t forget to add `/usr/local/bin/bash` to `/etc/shells` before
 # running `chsh`.
 brew install bash
+brew install tmux
 brew tap homebrew/versions
 brew install bash-completion@2
 

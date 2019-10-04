@@ -26,10 +26,10 @@ let python_highlight_all = 1
 
 
 " Colors
-set termguicolors
-set t_8f=[38;2;%lu;%lu;%lum  " Tmux
-set t_8b=[48;2;%lu;%lu;%lum  " Tmux
-set t_ut=                      " Tmux (empty background color)
+"set termguicolors
+"set t_8f=[38;2;%lu;%lu;%lum  " Tmux
+"set t_8b=[48;2;%lu;%lu;%lum  " Tmux
+"set t_ut=                      " Tmux (empty background color)
 "set background=dark
 "colorscheme desert
 
@@ -65,9 +65,9 @@ function! g:SetColorScheme()
     highlight EndOfBuffer guifg=bg
 
     " Refresh dev icons in nerdtree
-    "if exists('g:NERDTree')
-    "    call webdevicons#softRefresh()
-    "endif
+    if exists('g:NERDTree')
+        call webdevicons#softRefresh()
+    endif
 
     " Reload airline theme now when "remembered" g:COLOR is available
     "if exists('g:' . toupper(g:COLOR) . '_AIRLINE')
@@ -79,7 +79,7 @@ endfunction
 
 function! g:ToggleColorScheme()
     " Toggle dark vs light
-    let g:COLOR = (g:COLOR == 'dark') ? 'light' : 'dark'
+    "let g:COLOR = (g:COLOR == 'dark') ? 'light' : 'dark'
 
     call SetColorScheme()
 endfunction
@@ -451,45 +451,45 @@ endfunction
 
 " NERDTree
 " --------
-"let g:NERDCustomDelimiters = { 'cA': { 'right': '  # ' } }
-"let NERDTreeIgnore = ['\.pyc$']
-" ALT-n
-"nmap <silent> <C-n> :NERDTreeToggle<CR>
-"nmap <silent> <leader><lt> :NERDTreeFind<CR>
+let g:NERDCustomDelimiters = { 'cA': { 'right': '  # ' } }
+let NERDTreeIgnore = ['\.pyc$']
+"ALT-n
+nmap <silent> <C-n> :NERDTreeToggle<CR>
+nmap <silent> <leader><lt> :NERDTreeFind<CR>
 
 function! IsNerdTreeOpen()
-    "return exists('t:NERDTreeBufName') && bufwinnr(t:NERDTreeBufName) != -1
+    return exists('t:NERDTreeBufName') && bufwinnr(t:NERDTreeBufName) != -1
 endfunction
 
 
 " Devicons
 " --------
-"let g:webdevicons_enable = 1
-"let g:webdevicons_enable_nerdtree = 1
-"let g:webdevicons_conceal_nerdtree_brackets = 1
-"let g:WebDevIconsUnicodeGlyphDoubleWidth = 1
-"let g:WebDevIconsNerdTreeAfterGlyphPadding = ' '
-"let g:WebDevIconsUnicodeDecorateFolderNodes = 1
-"let g:DevIconsEnableFoldersOpenClose = 1
+let g:webdevicons_enable = 1
+let g:webdevicons_enable_nerdtree = 1
+let g:webdevicons_conceal_nerdtree_brackets = 1
+let g:WebDevIconsUnicodeGlyphDoubleWidth = 1
+let g:WebDevIconsNerdTreeAfterGlyphPadding = ' '
+let g:WebDevIconsUnicodeDecorateFolderNodes = 1
+let g:DevIconsEnableFoldersOpenClose = 1
 
 
 " Airline
 " -------
-"let g:airline#extensions#disable_rtp_load = 1
+let g:airline#extensions#disable_rtp_load = 1
 let g:airline#extensions#tabline#enabled = 1
-"let g:airline#extensions#tabline#show_buffers = 1
-"let g:airline#extensions#tabline#show_tabs = 1
-"let g:airline#extensions#tabline#show_tab_type = 0
+let g:airline#extensions#tabline#show_buffers = 1
+let g:airline#extensions#tabline#show_tabs = 1
+let g:airline#extensions#tabline#show_tab_type = 0
 let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
-"let g:airline#extensions#branch#enabled = 1
-"let g:airline#extensions#hunks#enabled = 0
-"let g:airline#extensions#wordcount#enabled = 0
-"let g:airline#extensions#ycm#enabled = 0
-"let g:airline#parts#ffenc#skip_expected_string = 'utf-8[unix]'
-"let g:airline_powerline_fonts = 1
-"let g:Powerline_symbols = 'unicode'
-"let g:airline_symbols = {}
-"let g:airline_symbols.space = "\ua0"
+let g:airline#extensions#branch#enabled = 1
+let g:airline#extensions#hunks#enabled = 0
+let g:airline#extensions#wordcount#enabled = 0
+let g:airline#extensions#ycm#enabled = 0
+let g:airline#parts#ffenc#skip_expected_string = 'utf-8[unix]'
+let g:airline_powerline_fonts = 1
+let g:Powerline_symbols = 'unicode'
+let g:airline_symbols = {}
+let g:airline_symbols.space = "\ua0"
 
 
 " YouCompleteMe
@@ -589,12 +589,12 @@ endif
 
 " A.L.E
 " -----
-"highlight clear ALEErrorSign
-"highlight clear ALEWarningSign
-"let g:airline#extensions#ale#enabled = 1
-"let g:ale_sign_error = '✖'
-"let g:ale_sign_warning = '⚠'  " ⚡
-"let g:ale_sign_column_always = 1
+highlight clear ALEErrorSign
+highlight clear ALEWarningSign
+let g:airline#extensions#ale#enabled = 1
+let g:ale_sign_error = '✖'
+let g:ale_sign_warning = '⚠'  " ⚡
+let g:ale_sign_column_always = 1
 
 "let g:ale_completion_enabled = 0
 "let g:ale_completion_delay = 10
