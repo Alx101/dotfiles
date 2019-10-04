@@ -23,6 +23,7 @@ brew tap homebrew/versions
 brew install bash-completion@2
 
 # Install tools
+brew install tmux
 brew install htop
 brew install git
 brew install libjpeg
