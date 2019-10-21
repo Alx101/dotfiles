@@ -22,6 +22,19 @@ function install() {
   cd ~/.config/nvim/
   nvm install node
   npm install
+  
+  # Install oh my zsh
+  sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+  
+  # pull down themes
+  git clone https://github.com/mbadolato/iTerm2-Color-Schemes.git
+
+  # Install powerline fonts
+  git clone https://github.com/powerline/fonts.git --depth=1
+  cd fonts
+  ./install.sh
+  cd ..
+  rm -rf fonts
 }
 
 if [ "$1" == "--force" -o "$1" == "-f" ]; then
