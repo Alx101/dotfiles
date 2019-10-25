@@ -41,5 +41,8 @@ brew install neovim/neovim/eeovim
 brew install python@2
 brew install python3
 
+# Install nvm
+brew install nvm
+
 # Remove outdated versions from the cellar.
 brew cleanup

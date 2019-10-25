@@ -35,6 +35,10 @@ function install() {
   ./install.sh
   cd ..
   rm -rf fonts
+
+  # Add git autocomplete
+  curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash --output ~/.git-completion.bash
+  
 }
 
 if [ "$1" == "--force" -o "$1" == "-f" ]; then
