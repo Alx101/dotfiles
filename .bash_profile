@@ -33,6 +33,7 @@ if [ -f ~/.git-completion.bash ]; then
   . ~/.git-completion.bash
 fi
 
+eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
 # NVM
