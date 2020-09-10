@@ -31,6 +31,7 @@ brew install the_silver_searcher  # ag
 brew install ctags
 brew install cmake
 brew install emacs
+brew install git-crypt
 
 # Install Python 2+3
 brew install python@2
