@@ -15,10 +15,6 @@ alias grep='grep --color=auto'
 # Enable aliases to be sudo’ed
 alias sudo='sudo '
 
-# Open neovim by default
-alias vvim=/usr/bin/vim
-alias vim=nvim
-
 # Get week number
 alias week='date +%V'
 
@@ -47,29 +43,7 @@ alias map="xargs -n1"
 # Lock the screen (when going AFK)
 alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
 
-# Python: venv, remove pyc-files recursively
-alias venv='test -d venv || (echo "Creating virtual environment..."; python3 -m venv venv) && printf "Activating...\n\n" && source venv/bin/activate'
-alias cleanpyc='find . | grep -E "(__pycache__|\.pyc$)" | xargs rm -rf'
-
 # Docker
 alias cleancontainers='docker rm $(docker ps --no-trunc -aq)'
 alias cleanimages='docker rmi $(docker images --quiet --filter "dangling=true")'
 alias cleanvolumes='docker volume ls -qf 'dangling=true' | grep -x ".\{64\}" | xargs -I{} docker volume rm  {}'
-
-# Remote connection
-alias connect="ssh -t alex 'bash -i -c \"tmux a\"'; clear"
-alias disconnect="kill -9 \$(pgrep -f 'ssh -t alex bash -i -c \"tmux a\"')"
-
-# Docker machine use/deactivate
-function use-machine () {
-  eval "$(docker-machine env "$@")"
-  source ~/.bash_prompt
-}
-
-function deactivate-machine () {
-  unset DOCKER_TLS_VERIFY
-  unset DOCKER_HOST
-  unset DOCKER_CERT_PATH
-  unset DOCKER_MACHINE_NAME
-  source ~/.bash_prompt
-}

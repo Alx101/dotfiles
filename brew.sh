@@ -16,12 +16,7 @@ brew upgrade --all
 
 # Install Bash 4.
 # Note: don’t forget to add `/usr/local/bin/bash` to `/etc/shells` before
-# running `chsh`.
 brew install bash
-brew install zsh
-
-# Add oh my zsh
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 brew install tmux
 brew tap homebrew/versions
@@ -35,14 +30,14 @@ brew install libjpeg
 brew install the_silver_searcher  # ag
 brew install ctags
 brew install cmake
-brew install neovim/neovim/eeovim
+brew install emacs
 
 # Install Python 2+3
 brew install python@2
 brew install python3
 
-# Install nvm
-brew install nvm
+brew install pyenv
+brew install pyenv-virtualenv
 
 # Remove outdated versions from the cellar.
 brew cleanup

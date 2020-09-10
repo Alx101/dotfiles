@@ -2,7 +2,7 @@
 
 cd "$(dirname "${BASH_SOURCE}")";
 
-git pull origin master;
+git pull origin emacs;
 
 function update() {
 	rsync --exclude ".git/" --exclude ".DS_Store" --exclude "bootstrap.sh" \
@@ -17,9 +17,8 @@ function install() {
     tmux source-file ~/.tmux.conf
   fi;
 
-  # Install node and dependencies
-  brew install nvm
-  cd ~/.config/nvim/
+  # Install node and homebrew
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
   nvm install node
   npm install
   

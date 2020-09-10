@@ -1,5 +1,4 @@
-# Make neovim the default editor.
-export VISUAL="nvim"
+export VISUAL="emacs"
 export EDITOR="$VISUAL"
 
 # Increase Bash history size. Allow 32³ entries; the default is 500.

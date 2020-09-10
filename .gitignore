@@ -3,6 +3,7 @@
 .eggs/
 .tags/
 venv/
+.python-version
 
 # Folder view configuration files
 .DS_Store
