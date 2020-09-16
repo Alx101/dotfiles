@@ -15,15 +15,19 @@ Options:
 }
 
 navigate() {
-    dev_dir="$HOME/R"
-    if [ -d $dev_dir'/'$1 ]; then
-	cd $dev_dir'/'$1
-	if [ -f $dev_dir'/'$1'/docker-compose.yml' ]; then
-	    docker-compose up -d
+    dev_dir="$HOME"
+    project_dirs="R Dev Dev/WebDev"
+    for dir in $project_dirs;
+    do
+	if [ -d $dev_dir'/'$dir'/'$1 ]; then
+	    cd $dev_dir'/'$dir'/'$1
+	    if [[ ! -z "$2" ]] && [[ -f $dev_dir'/'$dir'/'$1'/docker-compose.yml' ]]; then
+		docker-compose up -d
+	    fi
+	    return 1
 	fi
-    else
-	echo "$1 does not exist"
-    fi
+    done
+    echo "$1 does not exist"
     return 1
 }
 
@@ -52,6 +56,8 @@ main() {
 	--swap)
 	    echo "stopping all docker containers..."
 	    docker stop $(docker ps -aq)
+	    navigate "$dir" "swap"
+	    return 1
 	    ;;
     esac
 
