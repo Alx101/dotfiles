@@ -3,4 +3,3 @@ export BASH_COMPLETION_COMPAT_DIR="/usr/local/etc/bash_completion.d"
 
 [ -n "$PS1" ] && source ~/.bash_profile;
 
-alias workon=source ~/workon

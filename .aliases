@@ -47,3 +47,7 @@ alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resource
 alias cleancontainers='docker rm $(docker ps --no-trunc -aq)'
 alias cleanimages='docker rmi $(docker images --quiet --filter "dangling=true")'
 alias cleanvolumes='docker volume ls -qf 'dangling=true' | grep -x ".\{64\}" | xargs -I{} docker volume rm  {}'
+
+
+# Workon
+alias workon='. ~/workon'
