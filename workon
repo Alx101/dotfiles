@@ -1,0 +1,60 @@
+#!/bin/bash
+
+help() {
+    echo "
+workon: Navigate and prepare project to work on
+
+Usage: workon $project
+
+Options:
+	--help, show this message
+	--list, list available projects
+	--swap, stops docker containers and starts project containers  
+"
+    exit 1
+}
+
+navigate() {
+    dev_dir="$HOME/R"
+    if [ -d $dev_dir'/'$1 ]; then
+	cd $dev_dir'/'$1
+	if [ -f $dev_dir'/'$1'/docker-compose.yml' ]; then
+	    docker-compose up -d
+	fi
+    else
+	echo "$1 does not exist"
+    fi
+}
+
+main() {
+    dir=$1
+    if [ "$#" -eq 2 ]; then
+	dir=$2
+    fi
+    if [ "$#" -eq 0 ]; then
+	help
+	return
+    fi
+    case $1 in
+	--help)
+	    help
+	    return
+	    ;;
+	--list)
+	    echo "listing..."
+	    curdir="$(pwd)"
+	    cd "$HOME/R"
+	    for i in $(ls -d */); do echo ${i%%/}; done
+	    cd "$curdir"
+	    return
+	    ;;
+	--swap)
+	    echo "stopping all docker containers..."
+	    docker stop $(docker ps -aq)
+	    ;;
+    esac
+
+    navigate "$dir"
+}
+
+main "$1" "$2"
