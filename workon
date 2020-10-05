@@ -10,6 +10,7 @@ Options:
 	--help, show this message
 	--list, list available projects
 	--swap, stops docker containers and starts project containers  
+        --up, like swap, except only starts project containers
 "
     return 1
 }
@@ -57,6 +58,10 @@ main() {
 	    echo "stopping all docker containers..."
 	    docker stop $(docker ps -aq)
 	    navigate "$dir" "swap"
+	    return 1
+	    ;;
+	--up)
+	    navigate "$dir" "up"
 	    return 1
 	    ;;
     esac
